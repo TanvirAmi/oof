@@ -1,0 +1,352 @@
+html,
+body {
+	margin: 0;
+	color: #333;
+	background: #eee;
+	font-family: sans-serif;
+}
+
+body {
+	padding: 20px;
+}
+.carousel-inner{
+	background: #000;
+}
+.carousel .item{
+	height: 300px;
+	overflow: hidden;
+}
+.carousel .item img{
+	width: 100%;
+	height: auto;
+	margin-top: -25%;
+}
+.carousel-caption a{
+	color: #fff;
+}
+/*Dropdown Css*/
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+.dropdown-submenu {
+    position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+.dropdown-submenu.pull-left {
+    float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+/*./Dropdown Css*/
+/*** ESSENTIAL STYLES ***/
+.sf-menu, .sf-menu * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.sf-menu li {
+    position: relative;
+}
+.sf-menu ul {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+}
+.sf-menu > li {
+    float: left;
+}
+.sf-menu li:hover > ul,
+.sf-menu li.sfHover > ul {
+    display: block;
+}
+
+.sf-menu a {
+    display: block;
+    position: relative;
+}
+.sf-menu ul ul {
+    top: 0;
+    left: 100%;
+}
+
+
+/*** DEMO SKIN ***/
+.sf-menu {
+    float: right;
+    margin-bottom: 1em;
+}
+.sf-menu ul {
+    box-shadow: 2px 2px 6px rgba(0,0,0,.2);
+    min-width: 12em; /* allow long menu items to determine submenu width */
+    *width: 12em; /* no auto sub width for IE7, see white-space comment below */
+}
+.sf-menu a {
+    border-left: 1px solid #fff;
+    border-top: 1px solid #dFeEFF; /* fallback colour must use full shorthand */
+    border-top: 1px solid rgba(255,255,255,.5);
+    padding: .75em 1em;
+    text-decoration: none;
+    zoom: 1; /* IE7 */
+}
+.sf-menu a {
+    color: #13a;
+}
+.sf-menu li {
+    background: #BDD2FF;
+    white-space: nowrap; /* no need for Supersubs plugin */
+    *white-space: normal; /* ...unless you support IE7 (let it wrap) */
+    -webkit-transition: background .2s;
+    transition: background .2s;
+}
+.sf-menu ul li {
+    background: #AABDE6;
+}
+.sf-menu ul ul li {
+    background: #9AAEDB;
+}
+.sf-menu li:hover,
+.sf-menu li.sfHover {
+    background: #CFDEFF;
+    /* only transition out, not in */
+    -webkit-transition: none;
+    transition: none;
+}
+
+/*** arrows (for all except IE7) **/
+.sf-arrows .sf-with-ul {
+    padding-right: 2.5em;
+    *padding-right: 1em; /* no CSS arrows for IE7 (lack pseudo-elements) */
+}
+/* styling for both css and generated arrows */
+.sf-arrows .sf-with-ul:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    margin-top: -3px;
+    height: 0;
+    width: 0;
+    /* order of following 3 rules important for fallbacks to work */
+    border: 5px solid transparent;
+    border-top-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+    border-top-color: rgba(255,255,255,.5);
+}
+.sf-arrows > li > .sf-with-ul:focus:after,
+.sf-arrows > li:hover > .sf-with-ul:after,
+.sf-arrows > .sfHover > .sf-with-ul:after {
+    border-top-color: white; /* IE8 fallback colour */
+}
+/* styling for right-facing arrows */
+.sf-arrows ul .sf-with-ul:after {
+    margin-top: -5px;
+    margin-right: -3px;
+    border-color: transparent;
+    border-left-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+    border-left-color: rgba(255,255,255,.5);
+}
+.sf-arrows ul li > .sf-with-ul:focus:after,
+.sf-arrows ul li:hover > .sf-with-ul:after,
+.sf-arrows ul .sfHover > .sf-with-ul:after {
+    border-left-color: white;
+}
+
+
+/* superfish navbar */
+
+/*** adding the class sf-navbar in addition to sf-menu creates an all-horizontal nav-bar menu ***/
+.sf-navbar {
+    background: #BDD2FF;
+    position: relative;
+    margin-bottom: 5em;
+}
+/* provide background colour for submenu strip */
+/* you should just set the menu's container bg colour rather than use pseudo-elements */
+.sf-navbar:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    background-color: #BDD2FF;
+    height: 200%;
+    width: 100%;
+}
+.sf-navbar ul {
+    box-shadow: none;
+}
+.sf-navbar li {
+    background: #AABDE6;
+    position: static;
+}
+.sf-navbar > li > a,
+.sf-navbar > li > ul > li > a {
+    border: none;
+}
+.sf-navbar > li > ul {
+    min-width: 36em; /* set this to whatever suits your design */
+}
+.sf-navbar ul li {
+    background: #BDD2FF;
+    position: relative;
+}
+.sf-navbar ul ul {
+    left: 0;
+    top: 100%;
+}
+.sf-navbar ul ul li {
+    width: 100%;
+}
+.sf-navbar > li > ul > li {
+    float: left;
+}
+.sf-navbar li.current {
+    background: #BDD2FF;
+}
+.sf-navbar li:hover,
+.sf-navbar li.sfHover,
+.sf-navbar ul li.current {
+    background: #BDD2FF;
+}
+.sf-navbar ul li:hover,
+.sf-navbar ul li.sfHover,
+.sf-navbar ul ul li {
+    background: #D1DFFF;
+}
+.sf-navbar ul ul li:hover,
+.sf-navbar ul ul li.sfHover,
+.sf-navbar ul ul li.current {
+    background: #E6EEFF;
+}
+.sf-navbar ul li.current > a {
+    font-weight: bold;
+}
+
+/*** point all arrows down ***/
+.sf-arrows.sf-navbar ul .sf-with-ul:after {
+    margin-top: -3px;
+    margin-right: 0;
+    border-color: transparent;
+    border-top-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+    border-top-color: rgba(255,255,255,.5);
+}
+
+.sf-arrows.sf-navbar ul > li > .sf-with-ul:focus:after,
+.sf-arrows.sf-navbar ul > li:hover > .sf-with-ul:after,
+.sf-arrows.sf-navbar ul > .sfHover > .sf-with-ul:after {
+    border-color: transparent;
+    border-top-color: white;
+}
+
+.slicknav_menu {
+    display: none;
+}
+@media only screen and (max-width: 479px) {
+	/* #primary-menu is your theme’s original menu */
+	#primary-nav {
+		display:none;
+	}
+	.slicknav_menu {
+		display: block;
+	}
+}
+
+#respond input, #respond textarea {
+    border: 1px solid #e6e6e6 !important;
+    border-radius: 0;
+    box-shadow: none;
+}
+ol.commentlist li {
+    clear: both;
+    list-style: none;
+}
+ol.commentlist li:first-child {
+    padding: 25px 0 0 0;
+    border: none;
+}
+ol li ol.children {
+    float: left;
+}
+ol.commentlist li ol.children li:first-child {
+    padding: 25px 0 0 0;
+}
+.byuser .comment-des {
+    border-color: #bde395;
+    background: #eff8e6;
+}
+.comment-des:hover {
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.05);
+}
+.comment-des {
+    margin: 0 0 0 81px;
+    padding: 10px 20px;
+    border: 1px solid #e6e6e6;
+        border-top-color: rgb(230, 230, 230);
+        border-right-color: rgb(230, 230, 230);
+        border-bottom-color: rgb(230, 230, 230);
+        border-left-color: rgb(230, 230, 230);
+    background-color: #fff;
+}
+.avatar {
+    float: left;
+    border-radius: 50%;
+}
+.comment-by p.date, .comment-by p.date a {
+    display: block;
+    color: #999;
+    font-size: 0.9em;
+    font-style: italic;
+}
+.comment-by span.reply {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    color: #999;
+    font-size: 0.95em;
+}
+.comment-by {
+    position: relative;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 8px;
+    font-size: 0.9em;
+}
+ol.commentlist li {
+    clear: both;
+    list-style: none;
+}
+ol.commentlist li {
+    margin-bottom: 25px;
+}
